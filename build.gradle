@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'maven-publish'
+}
+
+group = 'com.haruq00'
+version = '0.1.0'
+archivesBaseName = 'mythmod'
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.minecraftforge.net' }
+    maven { url = 'https://repo.geckolib.net' }
+}
+
+dependencies {
+    implementation fg.deobf('net.minecraftforge:forge:1.20.1-47.4.0')
+    implementation 'software.bernie.geckolib:geckolib-forge-1.20:4.0.0'
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
